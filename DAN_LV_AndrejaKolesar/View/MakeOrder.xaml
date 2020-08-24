@@ -64,62 +64,62 @@
                   Grid.Row="3"
                   Width="auto"
                   Content="Salami"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding salami.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="3"
                   Width="auto"
                   Content="Ham"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding ham.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="5"
                   Width="auto"
                   Content="Kulen"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding kulen.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="5"
                   Width="auto"
                   Content="Ketchup"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding ketchup.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="7"
                   Width="auto"
                   Content="Mayonnaise"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding mayonnaise.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="7"
                   Width="auto"
                   Content="Pepper"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding pepper.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="9"
                   Width="auto"
                   Content="Olives"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding olives.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="9"
                   Width="auto"
                   Content="Oregano"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding oregano.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="11"
                   Width="auto"
                   Content="Sesame"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding sesame.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="11"
                   Width="auto"
                   Content="Cheese"
-                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+                  IsChecked="{Binding cheese.isSelected,Mode=TwoWay}" />
         <Button Grid.Column="1"
                 Grid.Row="13"
                 HorizontalAlignment="Right"
                 Width="100"
                 Content="Calculate amount"
-                Command="{Binding Close}" />
+                Command="{Binding calculate}" />
         <TextBlock Grid.Column="3"
                    Grid.Row="13"
                    Width="auto"
-                   Text="{Binding Recipe.type}"
+                   Text="{Binding amount}"
                    TextWrapping="Wrap" />
         <Button Grid.Column="3"
                 Grid.Row="15"

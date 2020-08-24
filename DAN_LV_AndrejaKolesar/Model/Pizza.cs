@@ -25,6 +25,13 @@ namespace DAN_LV_AndrejaKolesar.Model
             Price = price;
             SideDishes = side;
         }
+
+        public Pizza(Pizza pizza, List<SideDish> side)
+        {
+            Type = pizza.Type;
+            Price = pizza.Price;
+            SideDishes = side;
+        }
         #endregion
 
         public int CalculateAmount()
