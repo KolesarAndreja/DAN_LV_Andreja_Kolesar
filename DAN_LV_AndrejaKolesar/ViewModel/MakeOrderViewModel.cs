@@ -3,6 +3,7 @@ using DAN_LV_AndrejaKolesar.Model;
 using DAN_LV_AndrejaKolesar.View;
 using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows;
 using System.Windows.Input;
 
@@ -66,6 +67,20 @@ namespace DAN_LV_AndrejaKolesar.ViewModel
             {
                 _amount = value;
                 OnPropertyChanged("amount");
+            }
+        }
+
+        private bool _isNotCalculated = true;
+        public bool isNotCalculated
+        {
+            get
+            {
+                return _isNotCalculated;
+            }
+            set
+            {
+                _isNotCalculated = value;
+                OnPropertyChanged("isNotCalculated");
             }
         }
         #endregion
@@ -283,6 +298,7 @@ namespace DAN_LV_AndrejaKolesar.ViewModel
 
                 selectedPizza.SideDishes = sides;
                 amount = selectedPizza.CalculateAmount();
+                isNotCalculated = false;
             }
             catch (Exception ex)
             {
@@ -297,6 +313,91 @@ namespace DAN_LV_AndrejaKolesar.ViewModel
             else
                 return false;
 
+        }
+        #endregion
+
+
+        #region close
+        private ICommand _close;
+        public ICommand close
+        {
+            get
+            {
+                if (_close == null)
+                {
+                    _close = new RelayCommand(param => StartExecute(), param => CanStartExecute());
+                }
+                return _close;
+            }
+        }
+
+        private void StartExecute()
+        {
+            try
+            {
+                MainWindow main = new MainWindow();
+                makeOrder.Close();
+                main.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private bool CanStartExecute()
+        {
+            return true;
+        }
+        #endregion
+
+        #region save
+        private ICommand _save;
+        public ICommand save
+        {
+            get
+            {
+                if (_save == null)
+                {
+                    _save = new RelayCommand(param => SaveExecute(), param => CanSaveExecute());
+                }
+                return _save;
+            }
+        }
+
+        private void SaveExecute()
+        {
+            try
+            {
+                StringBuilder sb = new StringBuilder();
+                for(int i=0; i<sides.Count; i++)
+                {
+                    sb.Append(sides[i].Name + " ");
+                }
+                string message = "Order has been saved. \nPizza Size: " + selectedPizza.Type + "\nSide Dishes: " + sb.ToString();
+                MessageBox.Show(message);
+                MainWindow main = new MainWindow();
+                makeOrder.Close();
+                main.ShowDialog();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private bool CanSaveExecute()
+        {
+            if (!isNotCalculated)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         #endregion 
     }

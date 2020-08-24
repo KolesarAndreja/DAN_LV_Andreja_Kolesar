@@ -37,7 +37,9 @@ namespace DAN_LV_AndrejaKolesar.ViewModel
             try
             {
                 MakeOrder create = new MakeOrder();
+                main.Close();
                 create.ShowDialog();
+                
 
             }
             catch (Exception ex)

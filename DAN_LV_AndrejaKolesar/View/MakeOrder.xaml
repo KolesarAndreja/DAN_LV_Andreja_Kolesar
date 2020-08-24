@@ -50,13 +50,13 @@
                Grid.Row="1"
                Content="Size:" />
         <ComboBox Grid.Column="3"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                    Grid.Row="1"
                    Width="auto"
                   IsEditable="False"
                   ItemsSource="{Binding pizzaSize, UpdateSourceTrigger=PropertyChanged}"
                   SelectedItem="{Binding selectedPizza, UpdateSourceTrigger=PropertyChanged}"
-                  DisplayMemberPath="Type"
-                 />
+                  DisplayMemberPath="Type" />
         <Label Grid.Column="1"
                Grid.Row="3"
                Content="Side dishes:" />
@@ -64,57 +64,68 @@
                   Grid.Row="3"
                   Width="auto"
                   Content="Salami"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding salami.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="3"
                   Width="auto"
                   Content="Ham"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding ham.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="5"
                   Width="auto"
                   Content="Kulen"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding kulen.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="5"
                   Width="auto"
                   Content="Ketchup"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding ketchup.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="7"
                   Width="auto"
                   Content="Mayonnaise"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding mayonnaise.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="7"
                   Width="auto"
                   Content="Pepper"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding pepper.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="9"
                   Width="auto"
                   Content="Olives"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding olives.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="9"
                   Width="auto"
                   Content="Oregano"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding oregano.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="3"
                   Grid.Row="11"
                   Width="auto"
                   Content="Sesame"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding sesame.isSelected,Mode=TwoWay}" />
         <CheckBox Grid.Column="5"
                   Grid.Row="11"
                   Width="auto"
                   Content="Cheese"
+                  IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                   IsChecked="{Binding cheese.isSelected,Mode=TwoWay}" />
         <Button Grid.Column="1"
                 Grid.Row="13"
                 HorizontalAlignment="Right"
                 Width="100"
                 Content="Calculate amount"
+                IsEnabled="{Binding isNotCalculated, UpdateSourceTrigger=PropertyChanged}"
                 Command="{Binding calculate}" />
         <TextBlock Grid.Column="3"
                    Grid.Row="13"
@@ -128,12 +139,6 @@
                 Content="Save Order"
                 Command="{Binding save}" />
         <Button Grid.Column="5"
-                Grid.Row="15"
-                Width="100"
-                HorizontalAlignment="Left"
-                Content="Clear Order"
-                Command="{Binding close}" />
-        <Button Grid.Column="1"
                 Grid.Row="15"
                 Width="100"
                 HorizontalAlignment="Left"
