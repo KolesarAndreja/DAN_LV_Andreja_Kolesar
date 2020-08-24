@@ -1,0 +1,143 @@
+﻿<Window x:Class="DAN_LV_AndrejaKolesar.View.MakeOrder"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DAN_LV_AndrejaKolesar.View"
+        mc:Ignorable="d"
+        Title="MakeOrder"
+        SizeToContent="WidthAndHeight">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="1"
+               Grid.Row="1"
+               Content="Size:" />
+        <ComboBox Grid.Column="3"
+                   Grid.Row="1"
+                   Width="auto"
+                  IsEditable="False"
+                  ItemsSource="{Binding pizzaSize, UpdateSourceTrigger=PropertyChanged}"
+                  SelectedItem="{Binding selectedPizza, UpdateSourceTrigger=PropertyChanged}"
+                  DisplayMemberPath="Type"
+                 />
+        <Label Grid.Column="1"
+               Grid.Row="3"
+               Content="Side dishes:" />
+        <CheckBox Grid.Column="3"
+                  Grid.Row="3"
+                  Width="auto"
+                  Content="Salami"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="5"
+                  Grid.Row="3"
+                  Width="auto"
+                  Content="Ham"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="3"
+                  Grid.Row="5"
+                  Width="auto"
+                  Content="Kulen"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="5"
+                  Grid.Row="5"
+                  Width="auto"
+                  Content="Ketchup"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="3"
+                  Grid.Row="7"
+                  Width="auto"
+                  Content="Mayonnaise"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="5"
+                  Grid.Row="7"
+                  Width="auto"
+                  Content="Pepper"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="3"
+                  Grid.Row="9"
+                  Width="auto"
+                  Content="Olives"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="5"
+                  Grid.Row="9"
+                  Width="auto"
+                  Content="Oregano"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="3"
+                  Grid.Row="11"
+                  Width="auto"
+                  Content="Sesame"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <CheckBox Grid.Column="5"
+                  Grid.Row="11"
+                  Width="auto"
+                  Content="Cheese"
+                  IsChecked="{Binding User_Rights.bSales,Mode=TwoWay}" />
+        <Button Grid.Column="1"
+                Grid.Row="13"
+                HorizontalAlignment="Right"
+                Width="100"
+                Content="Calculate amount"
+                Command="{Binding Close}" />
+        <TextBlock Grid.Column="3"
+                   Grid.Row="13"
+                   Width="auto"
+                   Text="{Binding Recipe.type}"
+                   TextWrapping="Wrap" />
+        <Button Grid.Column="3"
+                Grid.Row="15"
+                Width="100"
+                HorizontalAlignment="Left"
+                Content="Save Order"
+                Command="{Binding save}" />
+        <Button Grid.Column="5"
+                Grid.Row="15"
+                Width="100"
+                HorizontalAlignment="Left"
+                Content="Clear Order"
+                Command="{Binding close}" />
+        <Button Grid.Column="1"
+                Grid.Row="15"
+                Width="100"
+                HorizontalAlignment="Left"
+                Content="Close"
+                Command="{Binding close}" />
+    </Grid>
+</Window>
