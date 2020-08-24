@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DAN_LV_AndrejaKolesar"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow"
+        SizeToContent="WidthAndHeight">
+    <Grid Background="LightSlateGray">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20" />
+           
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Button Grid.Column="1"
+                Grid.Row="1"
+                Command="{Binding start}"
+                Content="Start" 
+                Width="150"
+                Height="35"
+                Foreground="BlanchedAlmond"
+                Background="PaleVioletRed"
+                BorderBrush="BlanchedAlmond"
+                BorderThickness="2"
+                FontSize="16"></Button>
     </Grid>
 </Window>
